@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="d-flex justify-content-center ">
+        <h2>Liste Des Prorietaires</h2>
+    </div>
+    <nav class="navbar justify-content-end" >
+        <button routerLink="/ajouterProprietaire" class="btn btn-primary rounded-pill mx-3" >
+            <i class="bi bi-person-add"></i> Add Propriétaire
+        </button>
+      </nav>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of lesProprietaires">
+            <th scope="row">{{p.id}}</th>
+            <td>{{p.nom}}</td>
+            <td>{{p.prenom}}</td>
+            <td>{{p.telephone}}</td>
+            <td>{{p.mail}}</td>
+            <td>
+                <button  class="btn btn-warning" routerLink="/modifierProprietaire/{{p.id}}"> <i class="bi bi-pen-fill"></i> Modifier</button>
+                <button class="btn btn-danger" (click)="supprimer(p.id)"> <i class="bi bi-trash3"></i>Supprime</button>
+            </td>
+         
+          </tr>
+        </tbody>
+      </table>
+</div>

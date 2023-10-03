@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h2>Modifier les informations de Logement</h2>
+    </div>
+</div>
+<div  style="width: 60%;margin-left: 20%;">
+
+    <form [formGroup]="logementForm">
+        <label>Adresse:</label>
+        <input type="text" class="form-control" formControlName="adresse">
+        <label>description:</label>
+        <input type="text" class="form-control" formControlName="description">
+        <label>prix:</label>
+        <input type="number" class="form-control" formControlName="prix">
+    </form>
+    <hr>
+        <label class="label">Habitant</label>
+    <hr>
+    <form [formGroup]="habitantForm">
+        <label>Habitant:</label>
+            <label>Nom:</label>
+            <input type="text" class="form-control" formControlName="nom">
+            <label>Prenom:</label>
+            <input type="text" class="form-control" formControlName="prenom">
+            <label>telephone:</label>
+            <input type="number" class="form-control" formControlName="telephone">
+            <label>mail:</label>
+            <input type="text" class="form-control" formControlName="mail">
+            <label>profession:</label>
+            <input type="text" class="form-control" formControlName="profession">
+    </form>
+    <hr>
+        <label  class="label">Propriétaire</label>
+    <hr>
+    <form [formGroup]="proprietaireForm">
+        <label>Nom:</label>
+        <input type="text" class="form-control" formControlName="nom">
+        <label>Prenom:</label>
+        <input type="text" class="form-control" formControlName="prenom">
+        <label>telephone:</label>
+        <input type="number" class="form-control" formControlName="telephone">
+        <label>mail:</label>
+        <input type="text" class="form-control" formControlName="mail">
+    </form>
+
+    <div style="margin-top: 3%;margin-left: 40%;">
+        <input type="button" value=" Confirmer" (click)="onModifier()" class="btn btn-danger">
+    </div>
+</div>

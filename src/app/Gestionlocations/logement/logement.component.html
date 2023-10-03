@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex justify-content-center ">
+      <h2>Liste Des Logements</h2>
+  </div>
+  <nav class="navbar justify-content-end" >
+    <button routerLink="/ajouteLogement" class="btn btn-primary rounded-pill mx-3" >
+      <i class="bi bi-house-add-fill"></i> Add Logement
+    </button>
+  </nav>
+          <div  class="container">
+              <mat-card class="example-card" *ngFor="let l of lesLogements;index as i" >
+                <app-selected-logement [logement]="l" [index]="i" (notify)="onSuppression($event)"  ></app-selected-logement>    
+              </mat-card>
+          </div>
+</div>
+
+

@@ -1,0 +1,55 @@
+<div class="container pt-6 ms-5">
+    <div class="row">
+        <div class="col-5">
+            <mat-card>
+                <mat-card-content>
+                    <ul class="list-group" >
+                        <li class="badge text-bg-primary fs-6 list-group-item" >
+                          ID° {{logement.id}}
+                        </li>
+                    
+                        <li class="list-group-item  fs-6"><strong>Adresse : </strong>{{logement.adresse}}
+                            
+                        </li>
+                        <li class="list-group-item fs-6"> <strong> Description du Logement : </strong>{{logement.description}}
+                    
+                        </li>
+                        <li class="list-group-item fs-6"> <strong> prix du Logement : </strong>{{logement.prix}} DT
+                    
+                        </li>
+                        <li class="list-group-item "><strong class="fs-6">Proprietaire:</strong><br>
+                            <ng-container>
+                                <p style="margin-left: 10%; margin-top:3%;"><strong>Nom : </strong>{{ logement.proprietaire.nom }}</p>
+                                <p style="margin-left: 10%;"><strong>Prenom : </strong>{{ logement.proprietaire.prenom }}</p>
+                                <p style="margin-left: 10%;"><strong>Telephone du Habitant : </strong>{{ logement.proprietaire.telephone }}</p>
+                                <p style="margin-left: 10%;"><strong>Mail d'habitant : </strong>{{ logement.proprietaire.mail }}</p>
+                              </ng-container>
+                        </li>
+                        <li class="list-group-item " ><strong class="fs-6"> Habitants : </strong><br>
+                            <ng-container>
+                                <p style="margin-left: 10%; margin-top:5%;"><strong>Nom : </strong>{{ logement.habitant.nom }}</p>
+                                <p style="margin-left: 10%;"><strong>Prenom : </strong>{{ logement.habitant.prenom }}</p>
+                                <p style="margin-left: 10%;"><strong>Telephone du Habitant : </strong>{{ logement.habitant.telephone }}</p>
+                                <p style="margin-left: 10%;"><strong>Mail d'habitant : </strong>{{ logement.habitant.mail }}</p>
+                                <p style="margin-left: 10%;"><strong>Profession d'habitant : </strong>{{ logement.habitant.profession }}</p>
+                              </ng-container>
+                        </li>
+                        <li class="list-group-item"> 
+                            <div class="d-flex justify-content-between align-items-center mt-4 p-2" >
+                                <input type="button" class="btn btn-warning" value="Modifier"   (click)="display = !display">
+                                <input type="button" class="btn btn-secondary"  [routerLink]="['/logement']" value="Retour">
+                            </div>
+                        </li>
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-7" *ngIf="display">
+            <app-modifier-logement [logement]= "logement"
+            (notify)="onModification($event)"></app-modifier-logement>
+        </div>
+    </div>
+</div>
+
+
+

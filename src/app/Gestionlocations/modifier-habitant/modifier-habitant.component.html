@@ -1,0 +1,24 @@
+<div class="container" >
+    <div class="d-flex justify-content-center ">
+        <h2>Modifier les informations d'habitant</h2>
+    </div>
+    <hr>
+    <label class="label">Habitant</label>
+    <hr>
+    <form [formGroup]="habitantForm">
+      <label>Habitant:</label>
+          <label>Nom:</label>
+          <input type="text" class="form-control" formControlName="nom">
+          <label>Prenom:</label>
+          <input type="text" class="form-control" formControlName="prenom">
+          <label>telephone:</label>
+          <input type="number" class="form-control" formControlName="telephone">
+          <label>mail:</label>
+          <input type="text" class="form-control" formControlName="mail">
+          <label>profession:</label>
+          <input type="text" class="form-control" formControlName="profession">
+          <div style="margin-top: 3%;margin-left: 40%;">
+            <input type="button" value=" Confirmer" class="btn btn-danger" (click)="onModifier()">
+        </div>
+    </form>
+  </div>

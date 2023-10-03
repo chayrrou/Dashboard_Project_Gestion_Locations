@@ -1,0 +1,22 @@
+<mat-toolbar style="background-color:blue;">
+    <mat-toolbar-row>
+        <h1 class="badge text-bg-light rounded-pill">Gestion Des Locations</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 100%">
+        
+            <mat-nav-list>
+                <a routerLink="logement"  mat-list-item ><span>Liste Logement</span></a>
+                <a routerLink="habitant" mat-list-item><span>Liste Habitant</span></a>
+                <a routerLink="proprietaire" mat-list-item><span>Liste Proprietaire</span></a>
+            </mat-nav-list>       
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 100vh">
+
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h2>Ajoute Logement</h2>
+    </div>
+    <div style="width: 60%;margin-left: 20%;">
+        <form [formGroup]="logementForm">
+            <label>Adresse:</label>
+            <input type="text" class="form-control" formControlName="adresse">
+            <label>Description Or Etat:</label>
+            <input type="text" class="form-control" formControlName="description">
+            <label>Prix :</label>
+            <input type="text" class="form-control" formControlName="prix">   
+        </form>
+        
+        <form  [formGroup]="habitantForm">
+            <hr>
+            <label style="margin-left: 40%;color:blue;">Habitant</label>
+            <hr>
+            <select class="form-control" (change)="onSelected($event)">
+                <option value="0">-Select-</option>
+                <option *ngFor="let h of lesHabitants" [value]="h.id">{{h.nom}}--{{h.prenom}}</option>    
+            </select>
+        </form>
+
+        <form  [formGroup]="proprietaireForm">
+            <hr>
+            <label style="margin-left: 40%;color:blue;">Propriétaire</label>
+            <hr>
+            <select class="form-control" (change)="onSelectedProprietaire($event)">
+                <option value="0">-Select-</option>
+                <option *ngFor="let p of lesProprietaires" [value]="p.id">{{p.nom}}--{{p.prenom}}</option>
+                
+            </select>
+        </form>
+        <div class="d-flex justify-content-between align-items-center mt-4 p-2" >
+            <input type="button" value=" Ajouter"  (click)="addLogement()" class="btn btn-primary">
+            <input type="button" value=" Annuler"  class="btn btn-danger" (click)="annuler()">
+        </div>
+       
+    </div>
+</div>

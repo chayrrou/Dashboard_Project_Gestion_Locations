@@ -1,0 +1,18 @@
+<div  class="container">
+  <mat-card-content>
+    <h3><strong> Logement {{index+1}}</strong></h3>
+    <div class="d-flex justify-content-between">
+       <span class="badge text-bg-primary fs-6" style="height: 10%;"> {{logement.id}}</span>
+       <span  class="fs-5">{{logement.adresse}}</span>
+        <span class="fs-5">{{logement.description}}</span>
+        <span class="fs-5">{{logement.prix}} DT</span>
+    
+          <button [routerLink]="['/logement', logement.id]" class="btn btn-warning" >
+          <i class="bi bi-ticket-detailed"></i> Details
+          </button>
+          <button class="btn btn-danger" (click)="supprimer(logement.id)">
+            <i class="bi bi-trash-fill"></i>  Supprimer
+          </button>
+    </div>
+  </mat-card-content>
+</div>
